@@ -1,20 +1,5 @@
 import Foundation
 import Supabase
-import CryptoKit
-
-struct SupabaseUser: Codable {
-    let id: String
-    let email: String
-    let password: String
-    let createdAt: Date?
-    let updatedAt: Date?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, email, password
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
-    }
-}
 
 @MainActor
 class SupabaseService: ObservableObject {
@@ -22,11 +7,8 @@ class SupabaseService: ObservableObject {
     
     let client: SupabaseClient
     
-    @Published var currentUser: SupabaseUser?
+    @Published var currentUser: User?
     @Published var isAuthenticated = false
-    
-    private let userIdKey = "current_user_id"
-    private let userEmailKey = "current_user_email"
     
     private init() {
         self.client = SupabaseClient(
@@ -40,115 +22,45 @@ class SupabaseService: ObservableObject {
     }
     
     func checkSession() async {
-        guard let userId = UserDefaults.standard.string(forKey: userIdKey),
-              let email = UserDefaults.standard.string(forKey: userEmailKey) else {
+        do {
+            let session = try await client.auth.session
+            self.currentUser = session.user
+            self.isAuthenticated = true
+            print("🔐 AUTH DEBUG - Session restored for user:", session.user.id.uuidString)
+            print("🔐 AUTH DEBUG - User email:", session.user.email ?? "no email")
+        } catch {
             self.currentUser = nil
             self.isAuthenticated = false
             print("⚠️ AUTH DEBUG - No active session found")
-            return
-        }
-        
-        do {
-            let users: [SupabaseUser] = try await client
-                .from("users")
-                .select()
-                .eq("id", value: userId)
-                .execute()
-                .value
-            
-            if let user = users.first {
-                self.currentUser = user
-                self.isAuthenticated = true
-                print("🔐 AUTH DEBUG - Session restored for user:", user.id)
-                print("🔐 AUTH DEBUG - User email:", user.email)
-            } else {
-                clearSession()
-            }
-        } catch {
-            print("⚠️ AUTH DEBUG - Failed to restore session:", error.localizedDescription)
-            clearSession()
         }
     }
     
     func signIn(email: String, password: String) async throws {
         print("🔐 AUTH DEBUG - Attempting sign in for:", email)
-        
-        let users: [SupabaseUser] = try await client
-            .from("users")
-            .select()
-            .eq("email", value: email)
-            .execute()
-            .value
-        
-        guard let user = users.first else {
-            throw NSError(domain: "SupabaseService", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found"])
-        }
-        
-        if user.password != password {
-            throw NSError(domain: "SupabaseService", code: 401, userInfo: [NSLocalizedDescriptionKey: "Invalid password"])
-        }
-        
-        self.currentUser = user
+        let session = try await client.auth.signIn(email: email, password: password)
+        self.currentUser = session.user
         self.isAuthenticated = true
-        
-        UserDefaults.standard.set(user.id, forKey: userIdKey)
-        UserDefaults.standard.set(user.email, forKey: userEmailKey)
-        
-        print("✅ AUTH DEBUG - Sign in successful, user ID:", user.id)
+        print("✅ AUTH DEBUG - Sign in successful, user ID:", session.user.id.uuidString)
+        print("🔐 AUTH DEBUG - Access token:", session.accessToken.prefix(50) + "...")
     }
     
     func signUp(email: String, password: String) async throws {
         print("🔐 AUTH DEBUG - Attempting sign up for:", email)
         
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        UserDefaults.standard.synchronize()
-        
-        let existingUsers: [SupabaseUser] = try await client
-            .from("users")
-            .select()
-            .eq("email", value: email)
-            .execute()
-            .value
-        
-        if !existingUsers.isEmpty {
-            throw NSError(domain: "SupabaseService", code: 409, userInfo: [NSLocalizedDescriptionKey: "User already exists"])
-        }
-        
-        let newUser = [
-            "email": email,
-            "password": password
-        ]
-        
-        let createdUsers: [SupabaseUser] = try await client
-            .from("users")
-            .insert(newUser)
-            .select()
-            .execute()
-            .value
-        
-        guard let user = createdUsers.first else {
-            throw NSError(domain: "SupabaseService", code: 500, userInfo: [NSLocalizedDescriptionKey: "Failed to create user"])
-        }
-        
-        self.currentUser = user
+        let response = try await client.auth.signUp(email: email, password: password)
+        self.currentUser = response.user
         self.isAuthenticated = true
-        
-        UserDefaults.standard.set(user.id, forKey: userIdKey)
-        UserDefaults.standard.set(user.email, forKey: userEmailKey)
-        
-        print("✅ AUTH DEBUG - Sign up successful, user ID:", user.id)
+        print("✅ AUTH DEBUG - Sign up successful, user ID:", response.user.id.uuidString)
+        if let token = response.session?.accessToken {
+            print("🔐 AUTH DEBUG - Access token:", token.prefix(50) + "...")
+        }
     }
     
     func signOut() async throws {
-        clearSession()
-        print("🔐 AUTH DEBUG - User signed out successfully")
-    }
-    
-    private func clearSession() {
+        try await client.auth.signOut()
         self.currentUser = nil
         self.isAuthenticated = false
-        UserDefaults.standard.removeObject(forKey: userIdKey)
-        UserDefaults.standard.removeObject(forKey: userEmailKey)
+        print("🔐 AUTH DEBUG - User signed out successfully")
     }
     
     func fetchTasks() async throws -> [Task] {
@@ -156,7 +68,7 @@ class SupabaseService: ObservableObject {
             throw NSError(domain: "SupabaseService", code: 401, userInfo: [NSLocalizedDescriptionKey: "User not authenticated"])
         }
         
-        print("🔐 AUTH DEBUG - Fetching tasks for user ID:", userId)
+        print("🔐 AUTH DEBUG - Fetching tasks for user ID:", userId.uuidString)
         
         let userProjects = try await fetchProjects()
         let projectIds = userProjects.map { $0.id }
@@ -186,12 +98,12 @@ class SupabaseService: ObservableObject {
             throw NSError(domain: "SupabaseService", code: 401, userInfo: [NSLocalizedDescriptionKey: "User not authenticated"])
         }
         
-        print("🔐 AUTH DEBUG - Fetching projects for user ID:", userId)
+        print("🔐 AUTH DEBUG - Fetching projects for user ID:", userId.uuidString)
         
         let projects: [Project] = try await client
             .from("projects")
             .select()
-            .eq("user_id", value: userId)
+            .eq("user_id", value: userId.uuidString)
             .eq("archived", value: false)
             .execute()
             .value

@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001000000000000001 /* TaskFocusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001 /* TaskFocusApp.swift */; };
+		A1000002000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002000000000000001 /* ContentView.swift */; };
+		A1000003000000000000001 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000003000000000000001 /* Task.swift */; };
+		A1000004000000000000001 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000004000000000000001 /* Project.swift */; };
+		A1000005000000000000001 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005000000000000001 /* SupabaseService.swift */; };
+		A1000006000000000000001 /* SwipeLimitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006000000000000001 /* SwipeLimitService.swift */; };
+		A1000007000000000000001 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007000000000000001 /* AuthViewModel.swift */; };
+		A1000008000000000000001 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008000000000000001 /* TaskViewModel.swift */; };
+		A1000009000000000000001 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009000000000000001 /* AuthView.swift */; };
+		A1000010000000000000001 /* MainTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000010000000000000001 /* MainTaskView.swift */; };
+		A1000011000000000000001 /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011000000000000001 /* TaskCardView.swift */; };
+		A1000012000000000000001 /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012000000000000001 /* CongratsView.swift */; };
+		A1000013000000000000001 /* LimitReachedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000013000000000000001 /* LimitReachedView.swift */; };
+		A1000014000000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000014000000000000001 /* SettingsView.swift */; };
+		A1000015000000000000001 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000015000000000000001 /* Constants.swift */; };
+		A1000016000000000000001 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000016000000000000001 /* ColorTheme.swift */; };
+		A1000017000000000000001 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A3000001000000000000001 /* Supabase */; };
+		A1000018000000000000001 /* ABCGintoRounded-Black-Trial.otf in Resources */ = {isa = PBXBuildFile; fileRef = A2000018000000000000001 /* ABCGintoRounded-Black-Trial.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2000001000000000000001 /* TaskFocusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFocusApp.swift; sourceTree = "<group>"; };
+		A2000002000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2000003000000000000001 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A2000004000000000000001 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		A2000005000000000000001 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		A2000006000000000000001 /* SwipeLimitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeLimitService.swift; sourceTree = "<group>"; };
+		A2000007000000000000001 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		A2000008000000000000001 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		A2000009000000000000001 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		A2000010000000000000001 /* MainTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTaskView.swift; sourceTree = "<group>"; };
+		A2000011000000000000001 /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		A2000012000000000000001 /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
+		A2000013000000000000001 /* LimitReachedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitReachedView.swift; sourceTree = "<group>"; };
+		A2000014000000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A2000015000000000000001 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A2000016000000000000001 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		A2000017000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000018000000000000001 /* ABCGintoRounded-Black-Trial.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABCGintoRounded-Black-Trial.otf"; sourceTree = "<group>"; };
+		A4000001000000000000001 /* TaskFocusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFocusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5000001000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000017000000000000001 /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6000001000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A6000002000000000000001 /* Sources */,
+				A2000017000000000000001 /* Info.plist */,
+				A2000018000000000000001 /* ABCGintoRounded-Black-Trial.otf */,
+				A6000010000000000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6000002000000000000001 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A6000003000000000000001 /* TaskFocusApp */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A6000003000000000000001 /* TaskFocusApp */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000001 /* TaskFocusApp.swift */,
+				A2000002000000000000001 /* ContentView.swift */,
+				A6000004000000000000001 /* Models */,
+				A6000005000000000000001 /* Services */,
+				A6000006000000000000001 /* ViewModels */,
+				A6000007000000000000001 /* Views */,
+				A6000008000000000000001 /* Utilities */,
+			);
+			path = TaskFocusApp;
+			sourceTree = "<group>";
+		};
+		A6000004000000000000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2000003000000000000001 /* Task.swift */,
+				A2000004000000000000001 /* Project.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6000005000000000000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2000005000000000000001 /* SupabaseService.swift */,
+				A2000006000000000000001 /* SwipeLimitService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A6000006000000000000001 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A2000007000000000000001 /* AuthViewModel.swift */,
+				A2000008000000000000001 /* TaskViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A6000007000000000000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2000009000000000000001 /* AuthView.swift */,
+				A2000010000000000000001 /* MainTaskView.swift */,
+				A2000011000000000000001 /* TaskCardView.swift */,
+				A2000012000000000000001 /* CongratsView.swift */,
+				A2000013000000000000001 /* LimitReachedView.swift */,
+				A2000014000000000000001 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A6000008000000000000001 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2000015000000000000001 /* Constants.swift */,
+				A2000016000000000000001 /* ColorTheme.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A6000010000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4000001000000000000001 /* TaskFocusApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7000001000000000000001 /* TaskFocusApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8000001000000000000001 /* Build configuration list for PBXNativeTarget "TaskFocusApp" */;
+			buildPhases = (
+				A9000001000000000000001 /* Sources */,
+				A5000001000000000000001 /* Frameworks */,
+				AA000001000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskFocusApp;
+			packageProductDependencies = (
+				A3000001000000000000001 /* Supabase */,
+			);
+			productName = TaskFocusApp;
+			productReference = A4000001000000000000001 /* TaskFocusApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB000001000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A7000001000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A8000002000000000000001 /* Build configuration list for PBXProject "TaskFocusApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6000001000000000000001;
+			packageReferences = (
+				A3000002000000000000001 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			productRefGroup = A6000010000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7000001000000000000001 /* TaskFocusApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA000001000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000018000000000000001 /* ABCGintoRounded-Black-Trial.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9000001000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001000000000000001 /* TaskFocusApp.swift in Sources */,
+				A1000002000000000000001 /* ContentView.swift in Sources */,
+				A1000003000000000000001 /* Task.swift in Sources */,
+				A1000004000000000000001 /* Project.swift in Sources */,
+				A1000005000000000000001 /* SupabaseService.swift in Sources */,
+				A1000006000000000000001 /* SwipeLimitService.swift in Sources */,
+				A1000007000000000000001 /* AuthViewModel.swift in Sources */,
+				A1000008000000000000001 /* TaskViewModel.swift in Sources */,
+				A1000009000000000000001 /* AuthView.swift in Sources */,
+				A1000010000000000000001 /* MainTaskView.swift in Sources */,
+				A1000011000000000000001 /* TaskCardView.swift in Sources */,
+				A1000012000000000000001 /* CongratsView.swift in Sources */,
+				A1000013000000000000001 /* LimitReachedView.swift in Sources */,
+				A1000014000000000000001 /* SettingsView.swift in Sources */,
+				A1000015000000000000001 /* Constants.swift in Sources */,
+				A1000016000000000000001 /* ColorTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AC000001000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC000002000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC000003000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WTXDC56JLP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taskfocus.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC000004000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WTXDC56JLP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taskfocus.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8000001000000000000001 /* Build configuration list for PBXNativeTarget "TaskFocusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC000003000000000000001 /* Debug */,
+				AC000004000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8000002000000000000001 /* Build configuration list for PBXProject "TaskFocusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC000001000000000000001 /* Debug */,
+				AC000002000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3000002000000000000001 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3000001000000000000001 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3000002000000000000001 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AB000001000000000000001 /* Project object */;
+}
